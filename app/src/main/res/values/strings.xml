@@ -2,4 +2,5 @@
     <string name="app_name">RecyclerViewDemo</string>
     <string name="add">Добавить</string>
     <string name="remove">Удалить</string>
+    <string name="news_list">Список новостей</string>
 </resources>
