@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         val itemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        itemDecoration.setDrawable(getDrawable(R.drawable.black_line_5dp)!!)
         recycler.addItemDecoration(itemDecoration)
     }
 }
