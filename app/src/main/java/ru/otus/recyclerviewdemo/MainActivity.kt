@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -44,6 +45,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initRecycler()
+        initClickListeners()
+    }
+
+    private fun initClickListeners() {
+        findViewById<View>(R.id.addBtn).setOnClickListener{
+            items.add(2,         NewsItem("Заголовк NEW", "подзаголовк NEW", Color.YELLOW))
+            recyclerView.adapter?.notifyItemInserted(2)
+        }
+
+        findViewById<View>(R.id.removeBtn).setOnClickListener{
+            items.removeAt(2)
+            recyclerView.adapter?.notifyItemRemoved(2)
+        }
     }
 
     private fun initRecycler() {
